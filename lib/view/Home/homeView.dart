@@ -40,6 +40,8 @@ class _HomeViewState extends State<HomeView> {
             }
             /// passando informações para o modelo criado
             model = snapshot.data ?? model;
+            model.sort((a , b) => a.name!.compareTo(b.name!),
+            );
             return ListView.builder(
               itemCount: model.length,
               itemBuilder: (context, index) {
